@@ -40,8 +40,6 @@ gem 'figaro'
 gem 'rspec-rails'
 gem 'capybara'
 gem 'launchy'
-gem 'geocoder'
-gem 'gmaps4rails'
 
 
 group :development, :test do
