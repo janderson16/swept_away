@@ -12,14 +12,14 @@ class BostonService
     parse(connection.get("?street=#{street} #{suffix}#{@auth}"))
   end
 
-  def all
-    parse(connection.get("#{@auth}"))
-  end
-
-  def first_mon
-    # binding.pry
-    parse(connection.get("?week1=true&monday=true#{@auth}"))
-  end
+  # def all
+  #   parse(connection.get("#{@auth}"))
+  # end
+  #
+  # def first_mon
+  #   # binding.pry
+  #   parse(connection.get("?week1=true&monday=true#{@auth}"))
+  # end
 
   private
 

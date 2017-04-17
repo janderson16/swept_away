@@ -2,6 +2,8 @@
   <h1>Showing Routes for <%= @routes.first.street %> </h1>
 
   <% @routes.each do |route| %>
+  <iframe src="https://www.google.com/maps/embed/v1/directions?key=<%= ENV["g_maps_key"] %>&origin= <%= route.street %>+<%= route.start_point %>+boston&destination=<%= route.street %>+<%= route.end_point %>+boston" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
   <%= route.start_point %>
   <%= route.end_point %>
   <% end %>

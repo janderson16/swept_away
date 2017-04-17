@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :home, only: [:show]
 
-  resources :routes, only: [:show, :index]
+  resources :routes, only: [:index]
 
   get '/search', to: 'search#index'
 end
