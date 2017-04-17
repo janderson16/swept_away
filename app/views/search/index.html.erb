@@ -1,11 +1,37 @@
 <div class="container">
   <h1>Showing Routes for <%= @routes.first.street %> </h1>
-
-  <% @routes.each do |route| %>
-  <iframe src="https://www.google.com/maps/embed/v1/directions?key=<%= ENV["g_maps_key"] %>&origin= <%= route.street %>+<%= route.start_point %>+boston&destination=<%= route.street %>+<%= route.end_point %>+boston" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-
-  <%= route.start_point %>
-  <%= route.end_point %>
+  <% cache "#{@routes.first.street}" do %>
+    <table class="highlight">
+      <thead>
+        <tr>
+          <th>Map</th>
+          <th>From</th>
+          <th>To</th>
+          <th>Week of month</th>
+          <th>Days of week</th>
+          <th>Starting at</th>
+          <th>Finishing at</th>
+          <th>Side of street</th>
+        </tr>
+      </thead>
+      <% @routes.each do |route| %>
+      <tbody>
+        <tr>
+          <td><p>Show Map</p></td>
+          <td><p><%= route.start_point %></p></td>
+          <td><p><%= route.end_point %></p></td>
+          <td><p>Weeks of Map</p></td>
+          <td><p>Days of week</p></td>
+          <td><p><%= route.start_time.slice(0..4) %></p></td>
+          <td><p><%= route.end_time.slice(0..4) %></p></td>
+          <td><p><%= route.side %></p></td>
+        </tr>
+      </tbody>
+      <% end %>
+    </table>
   <% end %>
 
 </div>
+
+
+<!-- <iframe src="https://www.google.com/maps/embed/v1/directions?key=<%#= ENV["g_maps_key"] %>&origin= <%#= route.street %>+<%#= route.start_point %>+boston&destination=<%#= route.street %>+<%#= route.end_point %>+boston" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> -->
