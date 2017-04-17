@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Showing Routes for <%= @routes.first.street %> </h1>
+
+  <% @routes.each do |route| %>
+  <%= route.start_point %>
+  <%= route.end_point %>
+  <% end %>
+
+</div>

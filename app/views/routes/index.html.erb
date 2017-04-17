@@ -1,0 +1,32 @@
+<div class="container">
+  <%= form_tag :search, method: :get do %>
+  <h3>I want sweeping routes for:</h3>
+    <div class="row">
+      <p>Week of the month:</p>
+      <%= radio_button_tag(:week, "1st") %>
+      <%= label_tag(:week, "1st") %><br>
+      <%= radio_button_tag(:week, "2nd") %>
+      <%= label_tag(:week, "2nd") %><br>
+      <%= radio_button_tag(:week, "3rd") %>
+      <%= label_tag(:week, "3rd") %><br>
+      <%= radio_button_tag(:week, "4th") %>
+      <%= label_tag(:week, "4th") %><br>
+      <%= radio_button_tag(:week, "5th") %>
+      <%= label_tag(:week, "5th") %><br>
+      <%= text_field_tag :q, "Street Name" %>
+      <%= select_tag(:suffix, options_for_select([['St'],
+                                                  ['Pl'],
+                                                  ['Ave'],
+                                                  ['Blvd'],
+                                                  ['Rd'],
+                                                  ['Cir'],
+                                                  ['Ct'],
+                                                  ['Dr'],
+                                                  ['Ln'],
+                                                  ['Pkwy'],
+                                                  ['Way'],
+                                                  ['Pl']]))%>
+      <%= submit_tag "search" %>
+      <% end %>
+    </div>
+</div>
