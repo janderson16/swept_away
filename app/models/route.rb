@@ -40,13 +40,6 @@ class Route
     @sun = route_info[:sunday]
   end
 
-  # def self.first_mon
-  #   routes = BostonService.new.first_mon
-  #   routes.map do |route|
-  #     Route.new(route)
-  #   end
-  # end
-
   def self.search(street, suffix)
     routes = BostonService.new.search(street, suffix)
     routes.map do |route|
@@ -56,7 +49,6 @@ class Route
   end
 
   def days_of_week
-    # binding.pry
     return "M " if mon == "True"
     return "Tu " if tues == "True"
     return "W " if weds == "True"
@@ -67,7 +59,6 @@ class Route
   end
 
   def weeks_of_month
-    # binding.pry
     return "1st" if week1 == "True"
     return "2nd" if week2 == "True"
     return "3rd" if week3 == "True"
