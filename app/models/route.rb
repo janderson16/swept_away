@@ -51,7 +51,6 @@ class Route
   def self.all_routes
     routes = BostonService.new.all_routes
     routes.map do |route|
-      # binding.pry
       Route.new(route)
     end
   end

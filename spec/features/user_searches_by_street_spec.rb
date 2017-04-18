@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "user can search by street" do
-  it "" do
+  xit "when they input street name" do
     stub_omniauth
 
     visit "/routes"

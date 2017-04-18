@@ -10,5 +10,7 @@ Rails.application.routes.draw do
 
   resources :routes, only: [:index]
 
+  resources :all_routes, only: [:index]
+
   get '/search', to: 'search#index'
 end
