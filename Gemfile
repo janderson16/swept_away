@@ -40,6 +40,7 @@ gem 'figaro'
 gem 'rspec-rails'
 gem 'capybara'
 gem 'launchy'
+gem 'simplecov', :require => false, :group => :test
 
 
 group :development, :test do
