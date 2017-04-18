@@ -1,16 +1,16 @@
 require "rails_helper"
 
-describe "user logs in" do
-  it "using google oauth2" do
+describe "user can search by street" do
+  xit "when they input street name" do
     stub_omniauth
-    visit root_path
 
-    within(".home-sign-in") do
-      expect(page).to have_link("Sign in with Google")
-      click_link "Sign in with Google"
-    end
-    expect(page).to have_content("James Anderson")
-    expect(page).to have_link("Sign out")
+    visit "/routes"
+
+    fill_in :q, with: "Washington"
+    select "St", from: "suffix"
+
+    expect(page).to have_content("Showing Routes for Washington St")
+    expect(page).to have_content("Washington St Corey Rd Commonwealth Ave")
   end
 end
 

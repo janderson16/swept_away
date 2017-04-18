@@ -1,0 +1,21 @@
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h2 class="title">Showing All Routes in Boston</h2>
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                      <% cache "all_routes" do %>
+                        <%= render "shared/table" %>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- <iframe src="https://www.google.com/maps/embed/v1/directions?key=<%#= ENV["g_maps_key"] %>&origin= <%#= route.street %>+<%#= route.start_point %>+boston&destination=<%#= route.street %>+<%#= route.end_point %>+boston" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> -->

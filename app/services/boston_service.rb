@@ -7,9 +7,12 @@ class BostonService
     @auth = "&$$app_token=#{ENV["Boston_app"]}"
   end
 
-  def first_mon
-    # binding.pry
-    parse(connection.get("?week1=true&monday=true#{@auth}"))
+  def search(street, suffix)
+    parse(connection.get("?street=#{street} #{suffix}#{@auth}"))
+  end
+
+  def all_routes
+    parse(connection.get("?#{@auth}"))
   end
 
   private

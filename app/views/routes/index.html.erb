@@ -1,0 +1,24 @@
+<div class="container">
+  <%= form_tag :search, method: :get do %>
+  <h2>I want sweeping routes for:</h2>
+      <h6>Please input <i>only</i> the street name (i.e. <i>Washington</i>)</h6>
+      <div class="row">
+      <%= text_field_tag :q, placeholder="Street Name" %>
+      <%= select_tag(:suffix, options_for_select([['St'],
+                                                  ['Pl'],
+                                                  ['Ave'],
+                                                  ['Blvd'],
+                                                  ['Rd'],
+                                                  ['Cir'],
+                                                  ['Ct'],
+                                                  ['Dr'],
+                                                  ['Ln'],
+                                                  ['Pkwy'],
+                                                  ['Park'],
+                                                  ['Way'],
+                                                  ['Pl']]))%>
+      <%= submit_tag "search" %>
+      <% end %>
+    </div>
+    <%= link_to "See all routes in Boston", "/all_routes" %>
+</div>

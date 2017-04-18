@@ -9,14 +9,30 @@
   </head>
 
   <body>
-    <div>
-      <% if current_user %>
-        Signed in as <strong><%= current_user.first_name %> <%= current_user.last_name %></strong>!
-        <%= link_to "Sign out", signout_path, id: "sign_out" %>
-      <% else %>
-        <%= link_to "Sign in with Google", "/auth/google", id: "sign_in" %>
-      <% end %>
-    </div>
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <a class="navbar-brand" href="/">Swept Away</a>
+              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/routes">Lookup Routes <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="/all_routes">All Routes <span class="sr-only">(current)</span></a>
+                </li>
+              </ul>
+              <form class="form-inline my-3 my-lg-0">
+                <% if current_user %>
+                   <strong><%= current_user.first_name %> <%= current_user.last_name %></strong>
+                  <%= link_to "Sign out", signout_path, id: "sign_out" %>
+                <% else %>
+                    <%= link_to '<i class="fa fa-google"></i> Sign in with Google'.html_safe, "/auth/google", class: "btn btn-block btn-social btn-lg btn-google" %>
+                <% end %>
+              </form>
+          </div>
+    </nav>
     <div>
       <%= yield %>
     </div>
