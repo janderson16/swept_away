@@ -6,13 +6,13 @@ describe BostonService do
     @service = BostonService.new
   end
 
-  it "returns routes on first mon" do
+  it "returns routes on certain street" do
 
-    routes = @service.first_mon
-    # binding.pry
-    expect(routes.count).to eq(505)
-    expect(routes.first[:street]).to eq("Boylston St")
+    routes = @service.search("Washington", "St")
 
+    expect(routes.count).to eq(45)
+    expect(routes.first[:street]).to eq("Washington St")
+    expect(routes.first[:from]).to eq("Corey Rd")
+    expect(routes.first[:to]).to eq("Commonwealth Ave")
   end
-
 end
