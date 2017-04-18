@@ -1,16 +1,18 @@
 require "rails_helper"
 
 describe Route do
-  describe "#first_mon" do
-    it "returns routes on first monday of month" do
+  describe "#search" do
+    it "returns routes on given street" do
 
-      routes = Route.first_mon
+      routes = Route.search("Washington", "St")
       route = routes.first
 
 
       expect(route.class).to eq(Route)
-      expect(routes.count).to eq(505)
-      expect(route.street).to eq("Boylston St")
+      expect(routes.count).to eq(45)
+      expect(route.street).to eq("Washington St")
+      expect(route.start_point).to eq("Corey Rd")
+      expect(route.end_point).to eq("Commonwealth Ave")
     end
   end
 end

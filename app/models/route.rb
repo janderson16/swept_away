@@ -4,7 +4,20 @@ class Route
               :street,
               :start_point,
               :end_point,
-              :side
+              :side,
+              :week1,
+              :week2,
+              :week3,
+              :week4,
+              :week5,
+              :sun,
+              :mon,
+              :tues,
+              :weds,
+              :thurs,
+              :fri,
+              :sat
+
 
   def initialize(route_info)
     @start_time = route_info[:starttime]
@@ -37,7 +50,28 @@ class Route
   def self.search(street, suffix)
     routes = BostonService.new.search(street, suffix)
     routes.map do |route|
+      # binding.pry
       Route.new(route)
     end
+  end
+
+  def days_of_week
+    # binding.pry
+    return "M " if mon == "True"
+    return "Tu " if tues == "True"
+    return "W " if weds == "True"
+    return "Th " if thurs == "True"
+    return "F " if fri == "True"
+    return "Sa " if sat == "True"
+    return "Su " if sun == "True"
+  end
+
+  def weeks_of_month
+    # binding.pry
+    return "1st" if week1 == "True"
+    return "2nd" if week2 == "True"
+    return "3rd" if week3 == "True"
+    return "4th" if week4 == "True"
+    return "5th" if week5 == "True"
   end
 end
