@@ -3,7 +3,7 @@
   <h2>I want sweeping routes for:</h2>
       <h6>Please input <i>only</i> the street name (i.e. <i>Washington</i>)</h6>
       <div class="row">
-      <%= text_field_tag :q, placeholder="Street Name" %>
+      <%= text_field_tag :q, nil, placeholder: "Street Name" %>
       <%= select_tag(:suffix, options_for_select([['St'],
                                                   ['Pl'],
                                                   ['Ave'],
