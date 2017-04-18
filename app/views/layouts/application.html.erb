@@ -25,9 +25,7 @@
                    <strong><%= current_user.first_name %> <%= current_user.last_name %></strong>
                   <%= link_to "Sign out", signout_path, id: "sign_out" %>
                 <% else %>
-                  <a class="btn btn-block btn-social btn-google">
-                    <span class="fa fa-google"></span> Sign in with Google
-                  </a>
+                    <%= link_to '<i class="fa fa-google"></i> Sign in with Google'.html_safe, "/auth/google", class: "btn btn-block btn-social btn-lg btn-google" %>
                 <% end %>
               </form>
           </div>

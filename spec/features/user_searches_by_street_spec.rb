@@ -3,9 +3,9 @@ require "rails_helper"
 describe "user can search by street" do
   it "" do
     stub_omniauth
-    
+
     visit "/routes"
-    save_and_open_page
+
     fill_in :q, with: "Washington"
     select "St", from: "suffix"
 

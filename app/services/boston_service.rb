@@ -11,6 +11,10 @@ class BostonService
     parse(connection.get("?street=#{street} #{suffix}#{@auth}"))
   end
 
+  def all_routes
+    parse(connection.get("?#{@auth}"))
+  end
+
   private
 
   def parse(response)

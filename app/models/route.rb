@@ -48,6 +48,14 @@ class Route
     end
   end
 
+  def self.all_routes
+    routes = BostonService.new.all_routes
+    routes.map do |route|
+      # binding.pry
+      Route.new(route)
+    end
+  end
+
   def days_of_week
     return "M " if mon == "True"
     return "Tu " if tues == "True"

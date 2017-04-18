@@ -15,4 +15,19 @@ describe Route do
       expect(route.end_point).to eq("Commonwealth Ave")
     end
   end
+  
+  describe "#all_routes" do
+    it "returns all routes" do
+
+      routes = Route.all_routes
+      route = routes.first
+
+
+      expect(route.class).to eq(Route)
+      expect(routes.count).to eq(1000)
+      expect(route.street).to eq("Ackley Pl")
+      expect(route.start_point).to eq("Washington St")
+      expect(route.end_point).to eq("Dead End")
+    end
+  end
 end

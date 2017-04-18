@@ -4,8 +4,11 @@ describe "user logs in" do
   it "using google oauth2" do
     stub_omniauth
     visit root_path
-    expect(page).to have_link("Sign in with Google")
-    click_link "Sign in with Google"
+
+    within(".home-sign-in") do
+      expect(page).to have_link("Sign in with Google")
+      click_link "Sign in with Google"
+    end
     expect(page).to have_content("James Anderson")
     expect(page).to have_link("Sign out")
   end
