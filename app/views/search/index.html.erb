@@ -7,9 +7,9 @@
                           <h2 class="title">Showing Routes for <%= @routes.first.street %></h2>
                       </div>
                       <div class="content table-responsive table-full-width">
-                        <% cache "#{@routes.first.street}" do %>
-                        <%= render "shared/table" %>
-                          <% end %>
+                        <% cache(fingerprint(@routes.first.street) + "routes-for-#{@routes.first.street}") do %>
+                          <%= render "shared/table" %>
+                        <% end %>
                       </div>
                   </div>
               </div>
