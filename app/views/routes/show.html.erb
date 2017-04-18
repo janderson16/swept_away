@@ -1,0 +1,30 @@
+<h1 class="text-center">Route Info</h1>
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="header">
+                        <h3 class="title"> </h3><br>
+                        <h4 class="title">  </h4><br>
+                        <h4 class="title">  </h4><br>
+                        <iframe src="https://www.mapquestapi.com/directions/v2/route?key=KEY&from=ashcroft+and+perkins+boston&to=ashcroft+and+moraine+boston&outFormat=json&ambiguities=ignore&routeType=fastest&doReverseGeocode=false&enhancedNarrative=false&avoidTimedConditions=false" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-7">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title text-center"><%= @routes.first.street %></h4>
+                    </div>
+                    <div class="content">
+                        <div id="chartHours" class="ct-chart">
+                          <%= render "shared/table" %>
+                        </div>
+                    </div>
+                </div>
+                <%= link_to 'Back to Search', :back %>
+            </div>
+        </div>

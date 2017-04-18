@@ -16,7 +16,8 @@ class Route
               :weds,
               :thurs,
               :fri,
-              :sat
+              :sat,
+              :mainid
 
 
   def initialize(route_info)
@@ -38,6 +39,7 @@ class Route
     @fri = route_info[:friday]
     @sat = route_info[:saturday]
     @sun = route_info[:sunday]
+    @mainid = route_info[:mainid]
   end
 
   def self.search(street, suffix)
@@ -50,6 +52,13 @@ class Route
 
   def self.all_routes
     routes = BostonService.new.all_routes
+    routes.map do |route|
+      Route.new(route)
+    end
+  end
+
+  def self.show(id)
+    routes = BostonService.new.show(id)
     routes.map do |route|
       Route.new(route)
     end

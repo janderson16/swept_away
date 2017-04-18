@@ -15,6 +15,10 @@ class BostonService
     parse(connection.get("?#{@auth}"))
   end
 
+  def show(id)
+    parse(connection.get("?mainid=#{id}#{@auth}"))
+  end
+
   private
 
   def parse(response)

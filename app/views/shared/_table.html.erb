@@ -15,7 +15,7 @@
     <% @routes.each do |route| %>
       <tbody>
         <tr>
-          <td><p> <%= link_to "Show Map"%></p></td>
+          <td><p> <%= link_to "Show Map", "/routes/#{route.mainid}", mainid: route.mainid%></p></td>
           <td><p><%= route.street %></p></td>
           <td><p><%= route.start_point %></p></td>
           <td><p><%= route.end_point %></p></td>
@@ -28,3 +28,4 @@
       </tbody>
     <% end %>
 </table>
+<!-- <iframe src="https://www.google.com/maps/embed/v1/directions?key=<%#= ENV["g_maps_key"] %>&origin= <%#= route.street %>+<%#= route.start_point %>+boston&destination=<%#= route.street %>+<%#= route.end_point %>+boston" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> -->

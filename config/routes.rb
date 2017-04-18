@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :home, only: [:show]
 
-  resources :routes, only: [:index]
+  resources :routes, only: [:index, :show]
 
   resources :all_routes, only: [:index]
 

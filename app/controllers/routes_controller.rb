@@ -3,4 +3,8 @@ class RoutesController < ApplicationController
 
   def index
   end
+
+  def show
+    @routes = Route.show(params[:id])
+  end
 end
