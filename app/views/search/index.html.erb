@@ -4,19 +4,18 @@
               <div class="col-md-12">
                   <div class="card">
                       <div class="header">
-                          <% if @routes = [] %>
-                        <h1 class="text-center"><strong>No Routes Found</strong></h1>
-                        <h4 class="text-center">Please check the street name and suffix and try again</h4>
-                        <p class="text-center"><%= link_to 'Back to Search Form', :back %></p>
-                          <% else %>
-                            <h2 class="title">Showing Routes for <%= @routes.first.street %></h2>
-                              <%= link_to '<i class="fa fa-google"></i> Log in with Google'.html_safe, "/auth/google", class: "btn btn-block btn-social btn-lg btn-google" %>
+                          <%# if @routes = [].empty? %>
+                        <!-- <h1 class="text-center"><strong>No Routes Found</strong></h1> -->
+                        <!-- <h4 class="text-center">Please check the street name and suffix and try again</h4> -->
+                        <!-- <p class="text-center"><%= link_to 'Back to Search Form', :back %></p> -->
+                          <%# else %>
+                            <h2 class="title text-center">Showing Routes for <%= @routes.first.street %></h2>
                       </div>
                         <div class="content table-responsive table-full-width">
                             <% cache(fingerprint(@routes.first.street) + "routes-for-#{@routes.first.street}") do %>
                               <%= render "shared/table" %>
                             <% end %>
-                          <% end %>
+                          <%# end %>
                       </div>
                   </div>
               </div>
