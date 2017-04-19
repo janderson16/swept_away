@@ -6,6 +6,7 @@
                 <div class="card">
                     <div class="header">
                         <% @routes.each do |route| %>
+                        <% cache(fingerprint(@routes.first.street) + "maps-for-#{@routes.first.street}") do %>
                         <iframe src="https://www.google.com/maps/embed/v1/directions?key=<%= ENV["g_maps_key"] %>&mode=walking&origin=<%= route.street %>+and+<%= route.start_point %>+boston&destination=<%= route.street %>+and+<%= route.end_point %>+boston" width="550" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                         <% end %>
                     </div>

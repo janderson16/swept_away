@@ -13,4 +13,10 @@
  *= require_tree .
  *= require_self
  */
- 
+ .Login{
+  padding-top: 20px;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-position: 0 -75px;
+  background-size:cover
+ }
