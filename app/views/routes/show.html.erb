@@ -5,12 +5,10 @@
             <div class="col-md-5">
                 <div class="card">
                     <div class="header">
-                        <h3 class="title"> </h3><br>
-                        <h4 class="title">  </h4><br>
-                        <h4 class="title">  </h4><br>
-                        <iframe src="https://www.mapquestapi.com/directions/v2/route?key=KEY&from=ashcroft+and+perkins+boston&to=ashcroft+and+moraine+boston&outFormat=json&ambiguities=ignore&routeType=fastest&doReverseGeocode=false&enhancedNarrative=false&avoidTimedConditions=false" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        <% @routes.each do |route| %>
+                        <iframe src="https://www.google.com/maps/embed/v1/directions?key=<%= ENV["g_maps_key"] %>&mode=walking&origin=<%= route.street %>+and+<%= route.start_point %>+boston&destination=<%= route.street %>+and+<%= route.end_point %>+boston" width="550" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        <% end %>
                     </div>
-
                 </div>
             </div>
 
@@ -28,3 +26,4 @@
                 <%= link_to 'Back to Search', :back %>
             </div>
         </div>
+        <!-- <iframe src="https://www.mapquestapi.com/embed/directions/v2/route?key=<%= ENV["mapquest_key"] %>&from=ashcroft+and+perkins+boston&to=ashcroft+and+moraine+boston&outFormat=json&ambiguities=ignore&routeType=fastest&doReverseGeocode=false&enhancedNarrative=false&avoidTimedConditions=false" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> -->
