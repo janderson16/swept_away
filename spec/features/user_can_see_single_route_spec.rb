@@ -8,11 +8,11 @@ describe "user can see one route" do
     click_link "Sign in with Google"
 
     visit "/all_routes"
-    within(".route12") do
+    within(".route1") do
       click_link "Show Map"
     end
-    expect(current_path).to eq("/routes/12")
-    expect(page).to have_content("Abbotsford St Walnut Ave Harold St 1st")
+    expect(current_path).to eq("/routes/1")
+    expect(page).to have_content("Ackley Pl Washington St Dead End 2nd M")
   end
 end
 
