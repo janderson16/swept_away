@@ -15,8 +15,17 @@
  */
  .Login{
   padding-top: 20px;
-  background-color: black;
+  background-image: "old_sweeper.jpg";
   background-repeat: no-repeat;
   background-position: 0 -75px;
   background-size:cover
  }
+ .center_div{
+     margin: 0 auto;
+     width:80% /* value of your choice which suits your alignment */
+ }
+/*.transparent_div {
+  background-color: rgba(gray,gray,gray, 0.3) !important;
+  opacity: 0.3;
+  background: transparent;
+}*/
