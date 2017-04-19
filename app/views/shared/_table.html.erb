@@ -1,3 +1,7 @@
+<div class="filter">
+  <label>Filter Results</label>
+  <input type="text" placeholder="" id="route_filter">
+</div>
 <table class="table transparent_div table-hover table-striped" id="posts">
     <thead>
       <tr>
@@ -12,20 +16,25 @@
         <th>Side of street</th>
       </tr>
     </thead>
-    <% @routes.each do |route| %>
-      <tbody class="page">
-        <tr class="post route<%= route.mainid %>">
-          <td><p> <%= link_to "Show Map", "/routes/#{route.mainid}", mainid: route.mainid%></p></td>
-          <td><p><%= route.street %></p></td>
-          <td><p><%= route.start_point %></p></td>
-          <td><p><%= route.end_point %></p></td>
-          <td><p><%= route.weeks_of_month %></p></td>
-          <td><p><%= route.days_of_week %> </p></td>
-          <td><p><%= route.start_time.slice(0..4) %></p></td>
-          <td><p><%= route.end_time.slice(0..4) %></p></td>
-          <td><p><%= route.side %></p></td>
-        </tr>
-      </tbody>
-    <% end %>
+    <div class="routes">
+      <% @routes.each do |route| %>
+        <tbody class="page">
+          <div data="<%= route.street %>">
+            <tr class="post route route<%= route.mainid %>">
+              <td><p> <%= link_to "Show Map", "/routes/#{route.mainid}", mainid: route.mainid%></p></td>
+              <td><p><%= route.street %></p></td>
+              <td><p><%= route.start_point %></p></td>
+              <td><p><%= route.end_point %></p></td>
+              <td><p><%= route.weeks_of_month %></p></td>
+              <td><p data-day="<%= route.days_of_week %>"><%= route.days_of_week %> </p></td>
+              <td><p><%= route.start_time.slice(0..4) %></p></td>
+              <td><p><%= route.end_time.slice(0..4) %></p></td>
+              <td><p><%= route.side %></p></td>
+            </tr>
+          </div>
+        </tbody>
+      <% end %>
+    </div>
 </table>
+
 <!-- <iframe src="https://www.google.com/maps/embed/v1/directions?key=<%#= ENV["g_maps_key"] %>&origin= <%#= route.street %>+<%#= route.start_point %>+boston&destination=<%#= route.street %>+<%#= route.end_point %>+boston" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> -->
