@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "user logs in" do
+describe "user logs in and out" do
   it "using google oauth2" do
     stub_omniauth
     visit root_path
@@ -11,6 +11,10 @@ describe "user logs in" do
     end
     expect(page).to have_content("James Anderson")
     expect(page).to have_link("Sign out")
+
+    click_link("Sign out")
+
+    expect(page).to have_link("Sign in with Google")
   end
 end
 

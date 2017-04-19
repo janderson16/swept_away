@@ -1,19 +1,18 @@
 require "rails_helper"
 
-describe "user can search by street" do
-  it "when they input street name" do
+describe "user can see one route" do
+  it "when they visit show page" do
     stub_omniauth
     visit root_path
 
     click_link "Sign in with Google"
 
-    visit "/routes"
-    fill_in :q, with: "Washington"
-    select "St", from: "suffix"
-    click_button "search"
-
-    expect(page).to have_content("Showing Routes for Washington St")
-    expect(page).to have_content("Washington St Corey Rd Commonwealth Ave")
+    visit "/all_routes"
+    within(".route12") do
+      click_link "Show Map"
+    end
+    expect(current_path).to eq("/routes/12")
+    expect(page).to have_content("Abbotsford St Walnut Ave Harold St 1st")
   end
 end
 

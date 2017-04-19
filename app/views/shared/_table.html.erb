@@ -14,7 +14,7 @@
     </thead>
     <% @routes.each do |route| %>
       <tbody>
-        <tr>
+        <tr class="route<%= route.mainid %>">
           <td><p> <%= link_to "Show Map", "/routes/#{route.mainid}", mainid: route.mainid%></p></td>
           <td><p><%= route.street %></p></td>
           <td><p><%= route.start_point %></p></td>
