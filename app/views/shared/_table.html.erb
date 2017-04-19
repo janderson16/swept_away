@@ -1,4 +1,4 @@
-<table class="table transparent_div table-hover table-striped">
+<table class="table transparent_div table-hover table-striped" id="posts">
     <thead>
       <tr>
         <th>Map</th>
@@ -13,8 +13,8 @@
       </tr>
     </thead>
     <% @routes.each do |route| %>
-      <tbody>
-        <tr class="route<%= route.mainid %>">
+      <tbody class="page">
+        <tr class="post route<%= route.mainid %>">
           <td><p> <%= link_to "Show Map", "/routes/#{route.mainid}", mainid: route.mainid%></p></td>
           <td><p><%= route.street %></p></td>
           <td><p><%= route.start_point %></p></td>

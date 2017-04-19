@@ -26,6 +26,6 @@
  }
 /*.transparent_div {
   background-color: rgba(gray,gray,gray, 0.3) !important;
-  /*opacity: 0.3;*/
-  /*background: transparent;*/
+  opacity: 0.3;
+  background: transparent;
 }*/
