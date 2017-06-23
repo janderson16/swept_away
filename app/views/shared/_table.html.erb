@@ -22,8 +22,8 @@
       <% @routes.each do |route| %>
         <tbody class="page">
           <div data="<%= route.street %>">
-            <tr class="post route route<%= route.mainid %>">
-              <td><p> <%= link_to "Show Map", "/routes/#{route.mainid}", mainid: route.mainid%></p></td>
+            <tr class="post route-row route route<%= route.mainid %>">
+              <td class="route-name"><p> <%= link_to "Show Map", "/routes/#{route.mainid}", mainid: route.mainid%></p></td>
               <td><p><%= route.street %></p></td>
               <td><p><%= route.start_point %></p></td>
               <td><p><%= route.end_point %></p></td>
