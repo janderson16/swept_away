@@ -16,7 +16,7 @@ Swept Away is an app that was inspired by those diligent civil servants handing 
 ## Setup
 
 1. Clone down the repository
-```$ git clone git@github.com:janderson16/m4-final.git```
+```$ git clone git@github.com:janderson16/swept_away.git```
 1. Bundle
 ```$ bundle install```
 1. Create database
