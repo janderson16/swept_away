@@ -7,7 +7,7 @@ $(document).ready(function () {
 
       $routes.each(function (index, route){
         $route = $(route);
-        if ($route.html()..toLowerCase().indexOf(currentName) !== -1) {
+        if ($route.html().toLowerCase().indexOf(currentName) !== -1) {
           $route.show();
         } else {
           $route.hide();
@@ -15,7 +15,7 @@ $(document).ready(function () {
       });
     });
   });
-//
+
 // $(document).ready(function () {
 //   $('#route_filter').keyup(function() {
 //     var that = this
