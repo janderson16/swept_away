@@ -11,14 +11,15 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
+ *= require dataTables/jquery.dataTables
  *= require_self
  */
  .Login{
   padding-top: 20px;
   background-image: "old_sweeper.jpg";
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   background-position: 0 -75px;
-  background-size:cover
+  background-size:contain
  }
  .center_div{
      margin: 0 auto;

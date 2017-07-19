@@ -1,26 +1,25 @@
-  <div class="content">
-      <div class="container-fluid">
-          <div class="row">
-              <div class="col-md-12">
-                  <div class="card">
-                      <div class="header">
-                          <h2 class="title text-center">Showing All Routes in Boston</h2>
-                      </div>
-                      <div class="filter text-center center_div">
-                        <label>Filter Results</label>
-                        <input type="text" placeholder="" id="route_filter">
-                      </div>
-                      <div class="content table-responsive table-full-width">
-                        <% cache(fingerprint(@routes) + "routes-for-all-routes") do %>
-                          <%= render "shared/table" %>
-                          <% end %>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-<%= paginate @routes %>
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h2 class="title text-center">Showing All Routes in Boston</h2>
+                    </div>
+                    <div class="filter text-center center_div">
+                      <label>Filter Results</label>
+                      <input type="text" placeholder="" id="route_filter">
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                      <% cache(fingerprint(@routes) + "routes-for-all-routes") do %>
+                        <%= render "shared/table" %>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Core Scripts - Include with every page -->
 <script src="assets/plugins/jquery-1.10.2.js"></script>

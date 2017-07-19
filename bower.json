@@ -1,0 +1,26 @@
+{
+  "name": "bower-swept-away",
+  "homepage": "https://github.com/janderson16/swept_away",
+  "authors": [
+    "James Anderson <james.p.anderson16@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "datatables.net": "^1.10.15",
+    "datatables.net-dt": "^3.2.2",
+    "datatables.net-autofill": "^2.2.0",
+    "datatables.net-autofill-dt": "^2.2.0",
+    "datatables.net-rowreorder": "^1.2.0",
+    "datatables.net-rowreorder-dt": "^1.2.0",
+    "datatables-autofill-bootstrap": "datatables.net-autofill-bs#^2.2.0"
+  }
+}
