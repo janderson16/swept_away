@@ -12,7 +12,7 @@ describe "user can see one route" do
       click_link "Show Map"
     end
     expect(current_path).to eq("/routes/1")
-    expect(page).to have_content("Ackley Pl Washington St Dead End 2nd M")
+    expect(page).to have_content("Ackley Pl Washington St End of Street 2nd M")
   end
 end
 

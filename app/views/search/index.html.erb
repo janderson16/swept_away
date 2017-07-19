@@ -11,7 +11,11 @@
                           <% else %>
                             <h2 class="title text-center">Showing Routes for <%= @routes.first.street %></h2>
                       </div>
-                        <div class="content table-responsive table-full-width">
+                      <div class="filter text-center center_div">
+                        <label>Filter Results</label>
+                        <input type="text" placeholder="" id="route_filter">
+                      </div>
+                      <div class="content table-responsive table-full-width">
                             <% cache(fingerprint(@routes.first.street) + "routes-for-#{@routes.first.street}") do %>
                               <%= render "shared/table" %>
                             <% end %>

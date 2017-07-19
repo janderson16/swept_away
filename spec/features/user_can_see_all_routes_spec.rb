@@ -8,9 +8,8 @@ describe "user can see list of all routes" do
     click_link "Sign in with Google"
 
     visit "/all_routes"
-    # save_and_open_page
 
-    expect(page).to have_content("Ackley Pl Washington St Dead End 2nd M 08:00 12:00 Even")
+    expect(page).to have_content("Ackley Pl Washington St End of Street 2nd M 08:00 12:00 Even")
   end
 
   it "but not without credentials" do

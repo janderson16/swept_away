@@ -27,7 +27,7 @@ describe Route do
       expect(routes.count).to eq(1000)
       expect(route.street).to eq("Ackley Pl")
       expect(route.start_point).to eq("Washington St")
-      expect(route.end_point).to eq("Dead End")
+      expect(route.end_point).to eq("End of Street")
     end
   end
 
