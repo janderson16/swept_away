@@ -25,7 +25,7 @@ class Route
     @end_time = route_info[:endtime]
     @street = route_info[:street]
     @start_point = route_info[:from]
-    @end_point = route_info[:to]
+    @end_point = route_info[:to] != "Dead End" ? route_info[:to] : "End of Street"
     @side = route_info[:side]
     @week1 = route_info[:week1]
     @week2 = route_info[:week2]
@@ -45,7 +45,6 @@ class Route
   def self.search(street, suffix)
     routes = BostonService.new.search(street, suffix)
     routes.map do |route|
-      # binding.pry
       Route.new(route)
     end
   end
@@ -81,4 +80,5 @@ class Route
     return "4th" if week4 == "True"
     return "5th" if week5 == "True"
   end
+
 end
